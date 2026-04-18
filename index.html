@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blahost</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+          },
+        },
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      body { background-color: #09090b; color: #e4e4e7; font-family: 'Inter', sans-serif; }
+    </style>
+  </head>
+  <body class="min-h-screen antialiased">
+
+    <header class="border-b border-zinc-800 px-6 py-4">
+      <div class="max-w-5xl mx-auto flex items-center justify-between">
+        <span class="text-white text-lg font-semibold tracking-tight">Blahost</span>
+        <nav class="flex gap-6 text-sm text-zinc-400">
+          <a href="#how-it-works" class="hover:text-white transition-colors">How it works</a>
+          <a href="#services" class="hover:text-white transition-colors">Services</a>
+          <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-20 space-y-28">
+
+      <section class="space-y-6 max-w-2xl">
+        <h1 class="text-4xl font-bold text-white leading-tight">
+          Turn your idle devices into income
+        </h1>
+        <p class="text-zinc-400 text-lg leading-relaxed">
+          Blahost runs quietly in the background on the devices you already own. You share a small
+          slice of your unused bandwidth and processing power, and you get paid for it. No
+          technical setup required.
+        </p>
+        <div class="pt-2">
+          <a href="#how-it-works" class="inline-block bg-white text-zinc-950 text-sm font-medium px-5 py-2.5 rounded hover:bg-zinc-200 transition-colors">
+            Learn how it works
+          </a>
+        </div>
+      </section>
+
+      <section id="how-it-works" class="space-y-10">
+        <h2 class="text-2xl font-semibold text-white">How it works</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+          <div class="space-y-3">
+            <div class="text-zinc-500 text-sm font-medium uppercase tracking-widest">Step 1</div>
+            <h3 class="text-white font-medium text-base">Install on your devices</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              Download Blahost on any device you own, such as a laptop, desktop, smart TV, or
+              spare phone. The more devices you connect, the more you can earn.
+            </p>
+          </div>
+          <div class="space-y-3">
+            <div class="text-zinc-500 text-sm font-medium uppercase tracking-widest">Step 2</div>
+            <h3 class="text-white font-medium text-base">Let it run in the background</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              Blahost only uses resources your devices are not already using. It monitors your
+              activity and backs off whenever you need full performance.
+            </p>
+          </div>
+          <div class="space-y-3">
+            <div class="text-zinc-500 text-sm font-medium uppercase tracking-widest">Step 3</div>
+            <h3 class="text-white font-medium text-base">Get paid monthly</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              Earnings are tracked in real time on your dashboard. You can withdraw once a month
+              to your bank account or a supported payment method.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="space-y-8">
+        <h2 class="text-2xl font-semibold text-white">What you share</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="border border-zinc-800 rounded-lg p-6 space-y-2">
+            <h3 class="text-white font-medium">Bandwidth</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              A portion of your unused internet connection. Blahost sets a limit so your own
+              browsing and streaming are never affected.
+            </p>
+          </div>
+          <div class="border border-zinc-800 rounded-lg p-6 space-y-2">
+            <h3 class="text-white font-medium">Idle compute</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              Light processing tasks that run only when your device is plugged in and the screen
+              is off or idle. It does not drain battery on laptops or phones.
+            </p>
+          </div>
+          <div class="border border-zinc-800 rounded-lg p-6 space-y-2">
+            <h3 class="text-white font-medium">Storage (optional)</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              If you have free disk space you want to contribute, you can opt in. This is not
+              required and can be turned off at any time.
+            </p>
+          </div>
+          <div class="border border-zinc-800 rounded-lg p-6 space-y-2">
+            <h3 class="text-white font-medium">Nothing else</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              Blahost does not access your files, messages, browsing history, or any personal
+              data. What you share is limited to the three categories above.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="space-y-6 bg-zinc-900 border border-zinc-800 rounded-xl p-8">
+        <h2 class="text-xl font-semibold text-white">How much can I earn?</h2>
+        <p class="text-zinc-400 text-sm leading-relaxed max-w-2xl">
+          Earnings depend on how many devices you connect, how long they stay online, and your
+          internet speed. A single always-on desktop with a decent connection typically earns
+          between $5 and $20 a month. Households with several devices running around the clock
+          can earn more.
+        </p>
+        <p class="text-zinc-400 text-sm leading-relaxed max-w-2xl">
+          You can see an estimate before you commit. After installing, Blahost will show you a
+          monthly earnings projection based on your setup before you flip the switch.
+        </p>
+      </section>
+
+      <section id="services" class="space-y-8">
+        <h2 class="text-2xl font-semibold text-white">What services we use</h2>
+        <p class="text-zinc-400 text-sm leading-relaxed max-w-2xl">
+          Blahost works by connecting to third-party passive income platforms in the background.
+          These services pay for access to unused internet bandwidth. Blahost handles all the setup
+          so you do not have to create accounts or manage anything yourself.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="border border-zinc-800 rounded-lg p-5 space-y-1.5">
+            <h3 class="text-white font-medium text-sm">EarnFM</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">Monetizes idle internet capacity through network traffic routing.</p>
+          </div>
+        </div>
+        <div class="space-y-3 pt-2">
+          <div class="flex gap-3 items-start">
+            <span class="text-zinc-500 text-sm mt-0.5">-</span>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              None of these services receive your personal information. They only see an
+              anonymous IP address, the same as any website you visit.
+            </p>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-zinc-500 text-sm mt-0.5">-</span>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              You can disable individual services from within the Blahost app. Turning one off
+              will reduce your earnings since fewer platforms are active.
+            </p>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-zinc-500 text-sm mt-0.5">-</span>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              All services listed here only use a portion of your internet connection. None of
+              them access your files, stored passwords, browsing activity, or any data on your
+              device.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="space-y-8">
+        <h2 class="text-2xl font-semibold text-white">Common questions</h2>
+        <div class="divide-y divide-zinc-800">
+          <div class="py-6 space-y-2">
+            <h3 class="text-white font-medium text-sm">Is this safe to run on my home network?</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              Yes. Blahost does not expose your local network to outside traffic. All outbound
+              connections are encrypted and only go to Blahost servers.
+            </p>
+          </div>
+          <div class="py-6 space-y-2">
+            <h3 class="text-white font-medium text-sm">Will it slow down my internet or computer?</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              Not noticeably. Blahost has built-in limits that cap how much bandwidth and CPU it
+              uses. If you open a video call or start a large download, it backs off automatically.
+            </p>
+          </div>
+          <div class="py-6 space-y-2">
+            <h3 class="text-white font-medium text-sm">Can I choose which devices to include?</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              Yes. You manage each device separately from your dashboard. You can pause or remove
+              any device at any time.
+            </p>
+          </div>
+          <div class="py-6 space-y-2">
+            <h3 class="text-white font-medium text-sm">How do I get paid?</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              You can withdraw earnings once they pass a $5 minimum. Supported options include
+              direct bank transfer and PayPal. More options are coming.
+            </p>
+          </div>
+          <div class="py-6 space-y-2">
+            <h3 class="text-white font-medium text-sm">What happens if I uninstall it?</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              Any pending earnings are still paid out at the next payment cycle. Blahost leaves
+              no background processes behind after uninstall.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="space-y-4 max-w-xl">
+        <h2 class="text-2xl font-semibold text-white">Contact us</h2>
+        <p class="text-zinc-400 text-sm leading-relaxed">
+          Have a question or run into an issue? Send us an email and we will get back to you.
+        </p>
+        <a href="mailto:help@blahost.lol" class="inline-block text-white text-sm font-medium border border-zinc-700 px-5 py-2.5 rounded hover:border-zinc-400 transition-colors">
+          help@blahost.lol
+        </a>
+      </section>
+
+    </main>
+
+    <footer class="border-t border-zinc-800 mt-20 px-6 py-8">
+      <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <span class="text-zinc-600 text-sm">Blahost</span>
+        <div class="flex gap-6 text-zinc-600 text-sm">
+          <a href="#" class="hover:text-zinc-400 transition-colors">Privacy</a>
+          <a href="#" class="hover:text-zinc-400 transition-colors">Terms</a>
+          <a href="#" class="hover:text-zinc-400 transition-colors">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
