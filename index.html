@@ -1,421 +1,239 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blahost</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+          },
+        },
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      body { background-color: #09090b; color: #e4e4e7; font-family: 'Inter', sans-serif; }
+    </style>
+  </head>
+  <body class="min-h-screen antialiased">
 
-<head>
-   <meta charset="UTF-8" />
-   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <title>Liman | Backend Dev</title>
-   
-   <meta name="description" content="I build backend systems. Focus is on stable, fast and secure systems.">
-   <meta name="author" content="Liman">
-   
-   <meta property="og:type" content="website">
-   <meta property="og:url" content="https://liman.blahost.lol">
-   <meta property="og:title" content="Liman">
-   <meta property="og:description" content="I build backend systems. Focus is on stable, fast and secure systems.">
-   <meta property="og:image" content="https://limangit.github.io/cdn/web/android-chrome-256x256.png">
-   
-   <link rel="shortcut icon" type="image/x-icon" href="cdn/web/favicon.ico">
-   <link rel="apple-touch-icon" sizes="180x180" href="cdn/web/apple-touch-icon.png">
-   <link rel="icon" type="image/png" sizes="32x32" href="cdn/web/favicon-32x32.png">
-   <link rel="icon" type="image/png" sizes="16x16" href="cdn/web/favicon-16x16.png">
-   <link rel="manifest" href="cdn/web/site.webmanifest">
-   <link rel="mask-icon" href="cdn/web/safari-pinned-tab.svg" color="#5bbad5">
-   <meta name="msapplication-TileColor" content="#da532c">
-   <meta name="theme-color" content="#4F46E5">
-   
-   <meta property="twitter:card" content="summary_large_image">
-   <meta property="twitter:url" content="https://limangit.github.io">
-   <meta property="twitter:title" content="Liman">
-   <meta property="twitter:description" content="I build backend systems. Focus is on stable, fast and secure systems.">
-   <meta property="twitter:image" content="https://limangit.github.io/cdn/web/android-chrome-256x256.png">
-   <meta name="robots" content="index, follow">
-   
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-   
-   <style>
-      :root {
-         color-scheme: dark;
-         --bg: #09090b;
-         --fg: #e4e4e7;
-         --muted: #a1a1aa;
-         --soft: #71717a;
-         --line: rgba(255, 255, 255, 0.10);
-         --card: #18181b;
-      }
-      
-      * {
-         box-sizing: border-box;
-      }
-      
-      html,
-      body {
-         margin: 0;
-         padding: 0;
-         background: var(--bg);
-         color: var(--fg);
-         font-family: "Inter", sans-serif;
-      }
-      
-      body {
-         line-height: 1.6;
-      }
-      
-      a {
-         color: inherit;
-         text-decoration: none;
-      }
-      
-      p {
-         text-align: justify;
-         margin: 0;
-      }
-      
-      img {
-         display: block;
-         max-width: 100%;
-      }
-      
-      .ser {
-         font-family: "Cormorant Garamond", serif;
-         font-weight: 700;
-      }
-      
-      .mono {
-         font-family: "IBM Plex Mono", monospace;
-      }
-      
-      .nav {
-         border-bottom: 1px solid var(--line);
-         position: sticky;
-         z-index: 1000;
-         background: var(--bg);
-         top: 0;
-      }
-      
-      .wrap {
-         max-width: 48rem;
-         margin: 0 auto;
-         padding: 0 1rem;
-      }
-      
-      .nav .wrap {
-         padding-top: 0.75rem;
-         padding-bottom: 0.75rem;
-         font-size: 0.95rem;
-         font-weight: 500;
-         color: #fff;
-      }
-      
-      main.wrap {
-         padding-top: 2rem;
-         padding-bottom: 3rem;
-      }
-      
-      .hero {
-         margin-top: 0;
-      }
-      
-      .title {
-         margin: 0;
-         font-size: clamp(3rem, 8vw, 5rem);
-         line-height: 0.95;
-         font-weight: 700;
-         letter-spacing: -0.03em;
-         color: #fff;
-      }
-      
-      .sub {
-         margin-top: 0.75rem;
-         font-size: 0.88rem;
-         line-height: 1.5;
-         color: var(--soft);
-      }
-      
-      .sub2 {
-         margin-top: 0.1rem;
-         font-size: 0.75rem;
-         line-height: 1.5;
-         color: var(--soft);
-      }
-      
-      .lead {
-         margin-top: 0.9rem;
-         max-width: 42rem;
-         font-size: 0.95rem;
-         line-height: 1.75;
-         color: #d4d4d8;
-      }
-      
-      section {
-         margin-top: 2.5rem;
-      }
-      
-      .chgroup {
-         display: flex;
-         margin: 5px 0;
-      }
-      
-      .chip {
-         border: 1px solid var(--line);
-         padding: 0.1rem 0.85rem;
-         background: rgba(255, 255, 255, 0.01);
-         font-family: "IBM Plex Mono", monospace;
-         font-weight: 600;
-      }
-      
-      h2 {
-         margin: 0;
-         font-family: "Cormorant Garamond", serif;
-         font-size: 1.45rem;
-         line-height: 1.1;
-         font-weight: 600;
-         color: #fff;
-         letter-spacing: -0.01em;
-      }
-      
-      .txt {
-         margin-top: 0.55rem;
-         max-width: 42rem;
-         font-size: 0.96rem;
-         line-height: 2;
-         color: #d4d4d8;
-      }
-      
-      .row {
-         display: flex;
-         align-items: center;
-         justify-content: space-between;
-         gap: 1rem;
-      }
-      
-      .cnt {
-         font-size: 0.75rem;
-         color: var(--soft);
-      }
-      
-      .list {
-         margin-top: 1rem;
-         display: grid;
-         gap: 1rem;
-      }
-      
-      .card {
-         border: 1px solid var(--line);
-         background: rgba(24, 24, 27, 0.35);
-         overflow: hidden;
-      }
-      
-      .ph {
-         width: 100%;
-         aspect-ratio: 16 / 9;
-         background: #27272a;
-      }
-      
-      .ph img {
-         width: 100%;
-         height: 100%;
-         object-fit: cover;
-      }
-      
-      .bd {
-         padding: 0.85rem;
-      }
-      
-      .pt {
-         margin: 0;
-         color: #fff;
-         font-size: 0.95rem;
-         font-weight: 600;
-         line-height: 1.3;
-      }
-      
-      .ps {
-         margin-top: 0.2rem;
-         font-size: 0.78rem;
-         color: #a1a1aa;
-      }
-      
-      .lnk {
-         display: inline-block;
-         margin-top: 0.65rem;
-         margin-right: 1.4rem;
-         font-size: 0.78rem;
-         color: #d4d4d8;
-         font-family: "IBM Plex Mono", monospace;
-      }
-      
-      .lnk:hover {
-         text-decoration: underline;
-         text-underline-offset: 3px;
-      }
-      
-      .more {
-         font-size: 0.9rem;
-         color: var(--soft);
-      }
-      
-      .info {
-         margin-top: 0.75rem;
-         display: grid;
-         gap: 0.65rem;
-         font-size: 0.95rem;
-      }
-      
-      .box {
-         display: block;
-         border: 1px solid var(--line);
-         padding: 0.75rem 0.85rem;
-         font-weight: 500;
-         background: rgba(255, 255, 255, 0.01);
-      }
-      
-      .bold {
-         font-weight: 700;
-      }
-      
-      .box:hover {
-         border-color: rgba(255, 255, 255, 0.18);
-         background: rgba(255, 255, 255, 0.03);
-      }
-      
-      .footer {
-         margin-top: 3rem;
-         font-size: 0.75rem;
-         color: var(--soft);
-      }
-      
-      @media (max-width: 640px) {
-         main.wrap {
-            padding-top: 1.5rem;
-         }
-         
-         .title {
-            font-size: 3.2rem;
-         }
-         
-         .lead,
-         .txt {
-            font-size: 0.93rem;
-         }
-      }
-   </style>
-</head>
+    <header class="border-b border-zinc-800 px-6 py-4">
+      <div class="max-w-5xl mx-auto flex items-center justify-between">
+        <span class="text-white text-lg font-semibold tracking-tight">Blahost</span>
+        <nav class="flex gap-6 text-sm text-zinc-400">
+          <a href="#how-it-works" class="hover:text-white transition-colors">How it works</a>
+          <a href="#services" class="hover:text-white transition-colors">Services</a>
+          <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+        </nav>
+      </div>
+    </header>
 
-<body>
-   <header class="nav">
-      <div class="wrap">Liman's Portfolio</div>
-   </header>
-   
-   <main class="wrap">
-      <section class="hero">
-         <h1 class="title ser">Liman</h1>
-         
-         <div class="sub mono">
-            <p>Backend developer</p>
-            <p>5+ years of experience</p>
-         </div>
-         
-         <p class="lead">
-            I build backend systems. Focus is on stable, fast and secure systems.
-         </p>
-      </section>
-      
-      <section>
-         <h2 class="ser">About Me</h2>
-         
-         <p class="txt">
-            I am Liman, a 16-year-old college student. I started learning programming around 2020. Back then, I made bots for social media apps like Discord. After that, I moved into backend development.
-         </p>
-         
-         <p class="txt">
-            I used Node.js when I started. I also tried to get into frontend development, but when I saw people creating new frameworks every month, it became hard to keep up. People would start using one framework, calling it “all-in-one,” then switch to another, saying “this is the one.” I left frontend development after that.
-         </p>
-         
-         <p class="txt">
-            I then focused on backend development and grew interested in it. I tried learning lower-level languages like C, Rust, and Go. I chose Go because it was easy to work with and suitable for backend systems. I am currently learning Rust to build safer systems and C to better understand the fundamentals of programming.
-         </p>
-      </section>
-      
-      <section>
-         <h2 class="ser">Skills</h2>
-         <p class="txt">
-            I am a developer who focuses only on backend development. I am not a full-stack developer like other imposters who claim to be.
-            
-            I have been programming since 2020. I use <span class="bold">Go</span>, <span class="bold">NodeJS</span>, and <span class="bold">Python</span>. I build systems that you would love.
-         </p>
-         <div class="chgroup">
-            <p class="chip">Go</p>
-            <p class="chip">Python</p>
-            <p class="chip">NodeJS</p>
-         </div>
-      </section>
-      
-      <section>
-         <h2 class="ser">What I do</h2>
-         
-         <p class="txt">
-            I focus on compatibility, speed, security, and scaling. I build systems that can last for a long time. I make systems that can handle more load by spreading work across multiple machines.
-         </p>
-         
-         <p class="txt">
-            I pay close attention to security, so my systems are built to be safe. I make sure that if my systems are passed to other developers, they can understand the code and continue working on it. I also make sure the system is fast for users.
-         </p>
-         
-         <p class="txt">
-            My systems use as few resources as possible because I try to keep it efficient by using every method of optimization. I have over 5 years of experience. I avoid building systems that do not last long or cause problems later.
-         </p>
-      </section>
-      
-      <section>
-         <h2 class="ser">Info</h2>
-         
-         <div class="info">
-            <a href="mailto:liman@blahost.lol" class="box">Email: liman [at] blahost [dot] lol</a>
-            <a href="https://github.com/LimanGit" target="_blank" rel="noreferrer" class="box">Github: LimanGit</a>
-         </div>
-      </section>
-      
-      <section>
-         <div class="row">
-            <h2 class="ser">Projects</h2>
-            <span class="cnt mono" id="pcnt">0</span>
-         </div>
-         <div class="list" id="plist">
-         </div>
-         <div class="more">I am working on more private projects</div>
-      </section>
-      
-      <script id="a9x21">
-         fetch("projects.json")
-            .then(r => r.json())
-            .then(d => {
-               const list = document.getElementById("plist");
-               const cnt = document.getElementById("pcnt");
-               cnt.textContent = d.length;
-               d.forEach(p => {
-                  const el = document.createElement("article");
-                  el.className = "card";
-                  el.innerHTML = `
-                   <div class="ph">${p.img?`<img src="${p.img}" alt="${p.title}">`:""}</div>
-                   <div class="bd">
-                    <h3 class="pt">${p.title}</h3>
-                    <p class="sub2 mono">${p.sub||""}</p>
-                    <p class="ps">${p.description||""}</p>
-                    ${(p.links||[]).map(l=>`<a href="${l.link}" target="_blank" rel="noopener noreferrer" class="lnk">${l.text}</a>`).join("")}
-                   </div>
-                  `;
-                  list.appendChild(el);
-               });
-            });
-      </script>
-      
-      <footer class="footer">
-         &copy; Liman 2026
-      </footer>
-   </main>
-</body>
+    <main class="max-w-5xl mx-auto px-6 py-20 space-y-28">
 
+      <section class="space-y-6 max-w-2xl">
+        <h1 class="text-4xl font-bold text-white leading-tight">
+          Turn your idle devices into income
+        </h1>
+        <p class="text-zinc-400 text-lg leading-relaxed">
+          Blahost runs quietly in the background on the devices you already own. You share a small
+          slice of your unused bandwidth and processing power, and you get paid for it. No
+          technical setup required.
+        </p>
+        <div class="pt-2">
+          <a href="#how-it-works" class="inline-block bg-white text-zinc-950 text-sm font-medium px-5 py-2.5 rounded hover:bg-zinc-200 transition-colors">
+            Learn how it works
+          </a>
+        </div>
+      </section>
+
+      <section id="how-it-works" class="space-y-10">
+        <h2 class="text-2xl font-semibold text-white">How it works</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+          <div class="space-y-3">
+            <div class="text-zinc-500 text-sm font-medium uppercase tracking-widest">Step 1</div>
+            <h3 class="text-white font-medium text-base">Install on your devices</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              Download Blahost on any device you own, such as a laptop, desktop, smart TV, or
+              spare phone. The more devices you connect, the more you can earn.
+            </p>
+          </div>
+          <div class="space-y-3">
+            <div class="text-zinc-500 text-sm font-medium uppercase tracking-widest">Step 2</div>
+            <h3 class="text-white font-medium text-base">Let it run in the background</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              Blahost only uses resources your devices are not already using. It monitors your
+              activity and backs off whenever you need full performance.
+            </p>
+          </div>
+          <div class="space-y-3">
+            <div class="text-zinc-500 text-sm font-medium uppercase tracking-widest">Step 3</div>
+            <h3 class="text-white font-medium text-base">Get paid monthly</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              Earnings are tracked in real time on your dashboard. You can withdraw once a month
+              to your bank account or a supported payment method.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="space-y-8">
+        <h2 class="text-2xl font-semibold text-white">What you share</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="border border-zinc-800 rounded-lg p-6 space-y-2">
+            <h3 class="text-white font-medium">Bandwidth</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              A portion of your unused internet connection. Blahost sets a limit so your own
+              browsing and streaming are never affected.
+            </p>
+          </div>
+          <div class="border border-zinc-800 rounded-lg p-6 space-y-2">
+            <h3 class="text-white font-medium">Idle compute</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              Light processing tasks that run only when your device is plugged in and the screen
+              is off or idle. It does not drain battery on laptops or phones.
+            </p>
+          </div>
+          <div class="border border-zinc-800 rounded-lg p-6 space-y-2">
+            <h3 class="text-white font-medium">Storage (optional)</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              If you have free disk space you want to contribute, you can opt in. This is not
+              required and can be turned off at any time.
+            </p>
+          </div>
+          <div class="border border-zinc-800 rounded-lg p-6 space-y-2">
+            <h3 class="text-white font-medium">Nothing else</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              Blahost does not access your files, messages, browsing history, or any personal
+              data. What you share is limited to the three categories above.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="space-y-6 bg-zinc-900 border border-zinc-800 rounded-xl p-8">
+        <h2 class="text-xl font-semibold text-white">How much can I earn?</h2>
+        <p class="text-zinc-400 text-sm leading-relaxed max-w-2xl">
+          Earnings depend on how many devices you connect, how long they stay online, and your
+          internet speed. A single always-on desktop with a decent connection typically earns
+          between $5 and $20 a month. Households with several devices running around the clock
+          can earn more.
+        </p>
+        <p class="text-zinc-400 text-sm leading-relaxed max-w-2xl">
+          You can see an estimate before you commit. After installing, Blahost will show you a
+          monthly earnings projection based on your setup before you flip the switch.
+        </p>
+      </section>
+
+      <section id="services" class="space-y-8">
+        <h2 class="text-2xl font-semibold text-white">What services we use</h2>
+        <p class="text-zinc-400 text-sm leading-relaxed max-w-2xl">
+          Blahost works by connecting to third-party passive income platforms in the background.
+          These services pay for access to unused internet bandwidth. Blahost handles all the setup
+          so you do not have to create accounts or manage anything yourself.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="border border-zinc-800 rounded-lg p-5 space-y-1.5">
+            <h3 class="text-white font-medium text-sm">EarnFM</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">Monetizes idle internet capacity through network traffic routing.</p>
+          </div>
+        </div>
+        <div class="space-y-3 pt-2">
+          <div class="flex gap-3 items-start">
+            <span class="text-zinc-500 text-sm mt-0.5">-</span>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              None of these services receive your personal information. They only see an
+              anonymous IP address, the same as any website you visit.
+            </p>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-zinc-500 text-sm mt-0.5">-</span>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              You can disable individual services from within the Blahost app. Turning one off
+              will reduce your earnings since fewer platforms are active.
+            </p>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-zinc-500 text-sm mt-0.5">-</span>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              All services listed here only use a portion of your internet connection. None of
+              them access your files, stored passwords, browsing activity, or any data on your
+              device.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="space-y-8">
+        <h2 class="text-2xl font-semibold text-white">Common questions</h2>
+        <div class="divide-y divide-zinc-800">
+          <div class="py-6 space-y-2">
+            <h3 class="text-white font-medium text-sm">Is this safe to run on my home network?</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              Yes. Blahost does not expose your local network to outside traffic. All outbound
+              connections are encrypted and only go to Blahost servers.
+            </p>
+          </div>
+          <div class="py-6 space-y-2">
+            <h3 class="text-white font-medium text-sm">Will it slow down my internet or computer?</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              Not noticeably. Blahost has built-in limits that cap how much bandwidth and CPU it
+              uses. If you open a video call or start a large download, it backs off automatically.
+            </p>
+          </div>
+          <div class="py-6 space-y-2">
+            <h3 class="text-white font-medium text-sm">Can I choose which devices to include?</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              Yes. You manage each device separately from your dashboard. You can pause or remove
+              any device at any time.
+            </p>
+          </div>
+          <div class="py-6 space-y-2">
+            <h3 class="text-white font-medium text-sm">How do I get paid?</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              You can withdraw earnings once they pass a $5 minimum. Supported options include
+              direct bank transfer and PayPal. More options are coming.
+            </p>
+          </div>
+          <div class="py-6 space-y-2">
+            <h3 class="text-white font-medium text-sm">What happens if I uninstall it?</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              Any pending earnings are still paid out at the next payment cycle. Blahost leaves
+              no background processes behind after uninstall.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="space-y-4 max-w-xl">
+        <h2 class="text-2xl font-semibold text-white">Contact us</h2>
+        <p class="text-zinc-400 text-sm leading-relaxed">
+          Have a question or run into an issue? Send us an email and we will get back to you.
+        </p>
+        <a href="mailto:help@blahost.lol" class="inline-block text-white text-sm font-medium border border-zinc-700 px-5 py-2.5 rounded hover:border-zinc-400 transition-colors">
+          help@blahost.lol
+        </a>
+      </section>
+
+    </main>
+
+    <footer class="border-t border-zinc-800 mt-20 px-6 py-8">
+      <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <span class="text-zinc-600 text-sm">Blahost</span>
+        <div class="flex gap-6 text-zinc-600 text-sm">
+          <a href="#" class="hover:text-zinc-400 transition-colors">Privacy</a>
+          <a href="#" class="hover:text-zinc-400 transition-colors">Terms</a>
+          <a href="#" class="hover:text-zinc-400 transition-colors">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+  </body>
 </html>
